@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<!--要加载的地图-->
+	<arg name="map" default="office"/>
+	<arg name="map_file" default="$(find jethexa_slam)/maps/$(arg map).yaml"/>
+
+	<!-- 启动Map server功能包，发布地图 -->
+	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
+		<param name="frame_id" value="map" />
+	</node>
+</launch>        
+
